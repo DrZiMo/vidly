@@ -1,4 +1,4 @@
-{% extends 'movies/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <table class="table table-bordered">
@@ -16,7 +16,9 @@
         {% for movie in movies %}
         <tr>
             <td>{{ movie.id }}</td>
-            <td>{{ movie.title }}</td>
+            <td>
+                <a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a>
+            </td>
             <td>{{ movie.release_year }}</td>
             <td>{{ movie.number_in_stock }}</td>
             <td>{{ movie.daily_rate }}</td>
